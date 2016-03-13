@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+
+<title>
+  
+    CSS &middot; Bootstrap
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+
+<link href="../dist/css/bootstrap.css" rel="stylesheet">
+
+
+  <!-- Optional Bootstrap Theme -->
+
+  <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.css" rel="stylesheet" id="bs-theme-stylesheet">
+
+
+
+<!-- Documentation extras -->
+
+<link href="../assets/css/src/pygments-manni.css" rel="stylesheet">
+<link href="../assets/css/src/docs.css" rel="stylesheet">
+
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="../assets/js/ie-emulation-modes-warning.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-146052-10', 'getbootstrap.com');
+  ga('send', 'pageview');
+</script>
+
+  </head>
+  <body>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
+
+    <!-- Docs master nav -->
+   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="../" class="navbar-brand">InnoChart</a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="../examples">Examples</a>
+            </li>
+            <li>
+              <a href="../Documentation">Documentation</a>
+            </li>
+            <li>
+              <a href="https://github.com/magpass/InnoChart/wiki" target="_blank">Source</a>
+            </li>
+          </ul>          
+        </nav>
+      </div>
+    </header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h1>API Reference</h1>
+        <p>InnoChart의 모든 기능은 네임스페이스 InnoChart에 물려있다. InnoChart는 비표준 브라우저와의 호환을 위한 Date.now와 Object.create를 제외하고는 글로벌 네임스페이스에 아무것도 두지 않는다. InnoChart는 의미론적 버전 지정법을 사용한다. InnoChart의 버전은 InnoChart.version으로 확인할 수 있다.</p>
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+
+      <div class="row">
+        <div class="col-md-9" role="main">
+          <div class="bs-docs-section">
+  <h1 id="overview" class="page-header">InnoChart (core)</h1>  
+
+  <h2 id="overview-doctype">Selections</h2>
+  <p>Selections에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.select</a> - 현재 문서에서 문서요소 하나를 선택한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.selectAll</a> - 현재 문서에서 문서요소 여러개를 선택한다. </li>
+    <li> <a href="#" target="_blank">selection.attr</a> - 속성값을 지정하거나 가져온다. </li>
+    <li> <a href="#" target="_blank">selection.classed</a> - CSS 클래스를 추가하거나 제거한다. </li>
+    <li> <a href="#" target="_blank">selection.style</a> - CSS 스타일 프로퍼티를 지정하거나 가져온다. </li>
+    <li> <a href="#" target="_blank">selection.text</a> - HTML 컨텐츠를 지정하거나 가져온다. </li>
+    <li> <a href="#" target="_blank">selection.property</a> - 프로퍼티의 원래 값을 지정하거나 가져온다. </li>    
+    <li> <a href="#" target="_blank">selection.append</a> - 텍스트 컨텐츠를 지정하거나 가져온다. </li>
+    <li> <a href="#" target="_blank">selection.html</a> - HTML 컨텐츠를 지정하거나 가져온다. </li>
+    <li> <a href="#" target="_blank">selection.append</a> - 새로운 문서요소를 생성하고 추가한다. </li>
+    <li> <a href="#" target="_blank">selection.insert</a> - 존재하는 문서요소 앞에 새로운 문서요소를 생성하고 추가한다. </li>
+    <li> <a href="#" target="_blank">selection.remove</a> - 문서에서 문서요소를 제거한다. </li>
+    <li> <a href="#" target="_blank">selection.data</a> - 참조 연결 계산을 통해 데이터를 문서요소 그룹을 위해 지정하거나 가져온다. </li>
+    <li> <a href="#" target="_blank">selection.enter</a> - 부족한 문서요소를 위한 플레이스홀더를 반환한다. </li>
+    <li> <a href="#" target="_blank">selection.exit</a> - 더 이상 필요없는 문서요소를 반환한다. </li>
+    <li> <a href="#" target="_blank">selection.filter</a> - 데이터 기반으로 선택물을 필터링한다. </li>
+    <li> <a href="#" target="_blank">selection.datum</a> - 결합 연산없이 개별 문서요소에 대한 데이터를 지정하거나 가져온다. </li>
+    <li> <a href="#" target="_blank">selection.sort</a> - 데이터 기반으로 문서의 문서요소를 정렬한다. </li>
+    <li> <a href="#" target="_blank">selection.order</a> - 선택물과 일치하기 위해서 문서에 문서요소를 랜더링한다. </li>
+    <li> <a href="#" target="_blank">selection.on</a> - 인터렉션을 위한 이벤트 리스너를 추가하거나 제거한다. </li>
+    <li> <a href="#" target="_blank">selection.transition</a> - 선택한 문서요소에서 변환(transition)을 시작한다. </li>
+    <li> <a href="#" target="_blank">selection.each</a> - 선택한 문서요소 별로 함수를 호출한다. </li>
+    <li> <a href="#" target="_blank">selection.call</a> - 해당 선택물에서 함수를 호출한다. </li>
+    <li> <a href="#" target="_blank">selection.empty</a> - 선택물이 비어있으면 true를 반환한다. </li>
+    <li> <a href="#" target="_blank">selection.node</a> - 선택물의 첫번째 노드에 접근한다. </li>
+    <li> <a href="#" target="_blank">selection.select</a> - 선택한 문서요소 별로 자손 문서요소 하나씩을 하위선택물로 선택한다. </li>
+    <li> <a href="#" target="_blank">selection.selectAll</a> - 선택한 문서요소 별로 여러개의 자손문서요소를 하위선택물로 선택한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.selection</a> - 선택물의 prototype를 추가하거나 인스턴스 타입를 체크한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.event</a> - 인터렉션을 위한 해당 사용자 이벤트에 접근한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.mouse</a> - 지정한 컨테이너 기준의 마우스 좌표를 반환한다 </li>
+    <li> <a href="#" target="_blank">InnoChart.touches</a> - 지정한 컨테이너 기준으로 터치 좌표를 반환한다. </li>
+  </ul>
+
+
+<h2 id="overview-doctype">Transitions</h2>
+  <p>Transitions에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.transition</a> - 애니메이션된 트랜지션을 시작한다. </li>
+    <li> <a href="#" target="_blank">transition.delay</a> - 문서요소당 지연시간(밀리초)를 지정한다. </li>
+    <li> <a href="#" target="_blank">transition.duration</a> - 문서요소당 지속시간(밀리초)를 지정한다. </li>
+    <li> <a href="#" target="_blank">transition.ease</a> - 트랜지션에 이징함수를 지정한다.. </li>
+    <li> <a href="#" target="_blank">transition.attr</a> - 새로운 속성 값으로 부드럽게 트랜지션한다. </li>
+    <li> <a href="#" target="_blank">transition.attrTween</a> - 두 속성값 사이를 부드럽게 트랜지션 한다. </li>
+    <li> <a href="#" target="_blank">transition.style</a> - 새로운 CSS 스타일 프로퍼티 값으로 부드럽게 트랜지션한다. </li>    
+    <li> <a href="#" target="_blank">transition.styleTween</a> - 두개의 CSS 프로퍼티 값 사이를 부드럽게 트랜지션한다. </li>
+    <li> <a href="#" target="_blank">transition.text</a> - 트랜지션이 시작할 때, 텍스트 컨텐츠를 지정한다. </li>
+    <li> <a href="#" target="_blank">transition.tween</a> - 트랜지션의 한 부분으로 실행하기 위한 사용자 지정 tween 연산자를 지정한다. </li>
+    <li> <a href="#" target="_blank">transition.select</a> - 선택물의 각 문서요소의 자손 요소에서 트랜지션을 시작한다. </li>
+    <li> <a href="#" target="_blank">transition.selectAll</a> - 선택물의 각 문서요소의 자손요소들에서 트랜지션을 시작한다. </li>
+    <li> <a href="#" target="_blank">transition.filter</a> - 데이터를 기준으로 트랜지션을 필터링한다. </li>
+    <li> <a href="#" target="_blank">transition.transition</a> - 동일 문서요소에서 다른 트랜지션을 시작한다. </li>
+    <li> <a href="#" target="_blank">transition.remove</a> - 트랜지션 종료시점에 선택된 문서요소를 제거한다. </li>
+    <li> <a href="#" target="_blank">transition.each</a> - 트랜지션 end 이벤트의 리스너를 추가한다. </li>
+    <li> <a href="#" target="_blank">transition.call</a> - 전달된 함수를 해당 트랜지션에서 호출한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.tween</a> - 트랜지션의 보간작업(interpolation)을 수정한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.ease</a> - 트랜지션의 타이밍을 수정한다. </li>
+    <li> <a href="#" target="_blank">ease</a> - 파마미터 이징 함수. </li>
+    <li> <a href="#" target="_blank">InnoChart.timer</a> - 사용자 정의 애니메이션 타이머를 시작한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.timer.flush</a> - 타이머를 지연없이 바로 실행한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolate</a> - 두 값사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">interpolate</a> - 파라미터 포간 작업 함수. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateNumber</a> - 두 숫자 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateRound</a> - 두 정수 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateString</a> - 두 문자열 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateRgb</a> - 두 RGB 색상 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateHsl</a> - 두 HSL 색상 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateLab</a> - 두 L*a*b* 색상 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateHcl</a> - 두 HCL 색상 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateArray</a> - 두 배열 사이를 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateObject</a> - 두 객체의 속성을 보간한다. </li>
+    <li> <a href="#" target="_blank">InnoChart.interpolateTransform</a> - 두 개의 2D 행렬 변환를 보간한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.interpolators</a> - 사용자 정의 인터폴레이터를 등록한다. </li>
+  </ul>
+
+
+
+<h2 id="overview-doctype">Working with Arrays</h2>
+  <p>Working with Arrays에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.ascending</a> - 정렬을 위해 두 값을 비교한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.descending</a> - 정렬을 위해 두 값을 비교한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.min</a> - 배열에서 최소값을 찾는다.</li>
+    <li> <a href="#" target="_blank">InnoChart.max</a> - 배열에서 최대값을 찾는다.</li>
+    <li> <a href="#" target="_blank">InnoChart.extent</a> - 배열체서 최대, 최소값을 찾는다.</li>
+    <li> <a href="#" target="_blank">InnoChart.sum</a> - 숫자 배열의 합을 계산한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.mean</a> - 숫자 배열의 산술 평균을 계산한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.median</a> - 숫자 배열의 중간값을 계산한다. (0.5-quantile)</li>
+    <li> <a href="#" target="_blank">InnoChart.quantile</a> - 정렬된 숫자 배열에서 quantile를 계산한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.bisect</a> - 정렬된 배열에서 값을 검색한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.bisectRight</a> - 정렬된 배열에서 값을 검색한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.bisectLeft</a> - 정렬된 배열에서 값을 검색한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.bisector</a> - 접근자에서 사용하는 이등분 객체</li>
+    <li> <a href="#" target="_blank">InnoChart.shuffle</a> - 배열의 순서를 랜덤하게 만든다.</li>
+    <li> <a href="#" target="_blank">InnoChart.permute</a> - 색인 배열을 통해서 원소 배열을 재 정렬한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.zip</a> - 배열들의 가변수를 변환한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.transpose</a> - 배열의 배열을 변환한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.keys</a> - 연관배열의 key를 나열한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.values</a> - 연관배열의 값을 나열한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.entries</a> - 연관배열의 key-value 항목을 나열한다.</li>
+    <li> <a href="#" target="_blank">InnoChart.split</a> - 배열을 여러개로 분할한다</li>
+    <li> <a href="#" target="_blank">InnoChart.merge</a> - 여러 배열을 하나로 합친다</li>
+    <li> <a href="#" target="_blank">InnoChart.range</a> - 숫자형 값의 범위를 생성한다</li>
+    <li> <a href="#" target="_blank">InnoChart.nest</a> - 배열 원소를 계층구조로 그룹짓는다</li>
+    <li> <a href="#" target="_blank">nest.key</a> - 중첩 계층구조 단계를 추가 더한다</li>
+    <li> <a href="#" target="_blank">nest.sortKeys</a> - key로 해당 중첩 단계를 정렬한다</li>
+    <li> <a href="#" target="_blank">nest.sortValues</a> - 값으로 리프(leaf) 중첩 단계를 정렬한다</li>
+    <li> <a href="#" target="_blank">nest.rollup</a> - 리프 값을 위한 rollup 함수를 지정한다</li>
+    <li> <a href="#" target="_blank">nest.map</a> - nest 연산자를 평가해서 연관배열을 반환한다</li>
+    <li> <a href="#" target="_blank">nest.entries</a> - nest 연산자를 평가해서 정리된 key-values 배열을 반환한다</li>    
+  </ul>
+
+
+<h2 id="overview-doctype">Math</h2>
+  <p>Math에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.random.normal</a> - 정규분포의 난수 생성</li>    
+    <li> <a href="#" target="_blank">InnoChart.transform</a> - 2D 행렬 변환의 표준 형태를 연산한다</li>    
+  </ul>
+
+<h2 id="overview-doctype">Loading External Resources</h2>
+  <p>Loading External Resources에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.xhr</a> - XMLHttpRequest를 이용해서 리소스를 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.text</a> - 텍스트 파일을 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.json</a> - JSON blob을 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.html</a> - HTML 문서 조각을 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.xml</a> - XML 문서 조각을 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.csv</a> - 콤마로 값을 구분하는(CSV) 파일을 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.tsv</a> - 탭으로 값을 구분하는(TSV) 파일을 요청한다</li>      
+  </ul>
+
+<h2 id="overview-doctype">String Formatting</h2>
+  <p>String Formatting에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.format</a> - 숫자를 문자열로 포맷팅한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.requote</a> - 정규식에서 사용할 문자열을 전달한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.round</a> - 소수점 이하 특정 자리수에서 값을 반올림한다</li>    
+  </ul>
+
+<h2 id="overview-doctype">CSV Formatting (InnoChart.csv)</h2>
+  <p>CSV Formatting에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.csv</a> - 콤마로 구분된 값(CSV) 파일을 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.csv.parse</a> - 해더를 사용한 객체로 CSV 문자열을 파싱한다</li>  
+    <li> <a href="#" target="_blank">InnoChart.csv.parseRows</a> - 해더가 없는 CSV 문자열을 배열로 파싱한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.csv.format</a> - 원소 배열을 CSV 문자열로 포매팅한다</li>  
+    <li> <a href="#" target="_blank">InnoChart.tsv</a> - 탭으로 구분한 값(TSV) 파일을 요청한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.tsv.parse</a> - 해더를 사용한 객체로 TSV 문자열을 파싱한다</li>  
+    <li> <a href="#" target="_blank">InnoChart.tsv.parseRows</a> - 해더가 없는 TSV 문자열을 배열로 파싱한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.tsv.format</a> - 원소 배열을 TSV 문자열로 포매팅한다</li>    
+  </ul>
+
+<h2 id="overview-doctype">Colors</h2>
+  <p>Colors에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.rgb</a> - RGB 색공간의 색상을 지정한다</li>
+    <li> <a href="#" target="_blank">rgb.brighter</a> - 지수 인자(gamma)로 RGB 채널값을 늘린다</li>
+    <li> <a href="#" target="_blank">rgb.darker</a> - 지수 인자(gamma)로 RGB 채널값을 줄인다</li>
+    <li> <a href="#" target="_blank">rgb.hsl</a> - RGB를 HSL로 변환한다</li>
+    <li> <a href="#" target="_blank">rgb.toString</a> - RGB 색상을 문자열로 변환한다</li>
+    <li> <a href="#" target="_blank">InnoChart.hsl</a> - HSL 색공간의 색상을 지정한다</li>
+    <li> <a href="#" target="_blank">hsl.brighter</a> - 지수 인자(gamma)로 명도를 늘린다</li>
+    <li> <a href="#" target="_blank">hsl.darker</a> - 지수 인자(gamma)로 명도를 줄인다</li>
+    <li> <a href="#" target="_blank">hsl.rgb </a> - HSL를 RGB로 변환한다</li>
+    <li> <a href="#" target="_blank">hsl.toString</a> - HSL 색상을 문자열로 변환한다</li>
+    <li> <a href="#" target="_blank">InnoChart.lab</a> - specify L*a*b* 색공간의 색상을 지정한다</li>
+    <li> <a href="#" target="_blank">lab.brighter</a> - 지수 인자(gamma)로 명도를 늘린다</li>
+    <li> <a href="#" target="_blank">lab.darker</a> - 지수 인자(gamma)로 명도를 줄인다</li>
+    <li> <a href="#" target="_blank">lab.rgb</a> - L*a*b*를 RGB로 변환한다.</li>
+    <li> <a href="#" target="_blank">lab.toString</a> - L*a*b* 색상을 문자열로 변환한다</li>
+    <li> <a href="#" target="_blank">InnoChart.hcl</a> - HCL 색공간의 색상을 지정한다</li>
+    <li> <a href="#" target="_blank">hcl.brighter</a> - 지수 인자(gamma)로 명도를 늘린다</li>
+    <li> <a href="#" target="_blank">hcl.darker</a> - 지수 인자(gamma)로 명도를 줄인다</li>
+    <li> <a href="#" target="_blank">hcl.rgb</a> - HCL을 RGB로 변환한다</li>
+    <li> <a href="#" target="_blank">hcl.toString</a> - HCL 색상을 문자열로 변환한다</li>
+  </ul>
+
+<h2 id="overview-doctype">Namespaces</h2>
+  <p>Namespaces에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.ns.prefix</a> - 알려진 XML 네임스페이스를 접근하거나 확장한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.ns.qualify</a> - "xlink:href"같은 접두사 명을 승인한다.</li>    
+  </ul>
+
+<h2 id="overview-doctype">Internals</h2>
+  <p>Internals에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.functor</a> - 상수를 반환하는 함수를 생성한다</li>    
+    <li> <a href="#" target="_blank">InnoChart.rebind</a> - 상속된 getter/setter 메서드를 하위클래스로 다시 엮는다</li>
+    <li> <a href="#" target="_blank">InnoChart.dispatch</a> - 사용자 정의 이벤트 디스패처를 생성한다</li>
+    <li> <a href="#" target="_blank">dispatch.on</a> - 이벤트 리스너를 등록한다</li>
+    <li> <a href="#" target="_blank">dispatch</a> - 등록된 리스너로 이벤트를 전달한다</li>    
+  </ul>
+
+<h1 id="overview" class="page-header">InnoChart.scale (Scales)</h1>  
+<h2 id="overview-doctype">Quantitative</h2>
+  <p>Quantitative에 관련된 이미지</p>
+  <ul> 
+    <li><a href="#images-responsive">InnoChart.scale.linear</a> - 정량적 선형 스케일(축척)을 생성한다.</li>
+    <li><a href="#images-responsive">linear</a> - 주어진 정의역 값에 해당하는 치역 값을 반환한다.</li>
+    <li><a href="#images-responsive">linear.invert</a> - 주어진 치역 값에 해당하는 정의역 값을 반환한다.</li>
+    <li><a href="#images-responsive">linear.domain</a> - 스케일의 정의역을 지정하거나 가져온다.</li>
+    <li><a href="#images-responsive">linear.range</a> - 스케일의 치역을 지정하거나 가져온다.</li>
+    <li><a href="#images-responsive">linear.rangeRound</a> - 스케일의 치역을 지정하면서 가능할 경우 반올림한다.</li>
+    <li><a href="#images-responsive">linear.interpolate</a> - 스케일의 출력 인터폴레이터를 지정하거나 가져온다</li>
+    <li><a href="#images-responsive">linear.clamp</a> - 치역 범위을 한정하거나 하지 않는다</li>
+    <li><a href="#images-responsive">linear.nice</a> - 스케일의 정의역을 보기좋은 숫자로 반올림 해서 확장한다</li>
+    <li><a href="#images-responsive">linear.ticks</a> - 도메인에서 대표적인 구분값들을 가져온다</li>
+    <li><a href="#images-responsive">linear.tickFormat</a> - 출력용 구분값을 위한 포매터를 가져온다</li>
+    <li><a href="#images-responsive">linear.copy</a> - 존재하는 스케일에서 신규 스케일을 생성한다</li>
+    <li><a href="#images-responsive">InnoChart.scale.sqrt</a> - 제곱근 변환을 하는 정량 스케일을 생성한다</li>
+    <li><a href="#images-responsive">InnoChart.scale.pow</a> - 지수 변환을 변환을 하는 정량 스케일을 생성한다</li>
+    <li><a href="#images-responsive">pow</a> - 주어진 정의역 값에 들어맞는 치역 값을 가져온다</li>
+    <li><a href="#images-responsive">pow.invert</a> - 주어진 치역 값에 들어맞는 정의역 값을 가져온다</li>
+    <li><a href="#images-responsive">pow.domain</a> - 스케일의 정의역을 get/set 한다</li>
+    <li><a href="#images-responsive">pow.range</a> - 스케일의 치역을 get/set 한다</li>
+    <li><a href="#images-responsive">pow.rangeRound</a> - 스케일의 치역을 반올림 해서 지정한다.</li>
+    <li><a href="#images-responsive">pow.interpolate</a> - 스케일의 인터폴레이터를 get/set 한다</li>
+    <li><a href="#images-responsive">pow.clamp</a> - 치역 범위의 한정 여부를 결정한다</li>
+    <li><a href="#images-responsive">pow.nice</a> - 스케일의 정의역을 깔끔한 반올림 수로 확장한다</li>
+    <li><a href="#images-responsive">pow.ticks</a> - 정의역에서 대표할 값(구분자)들을 가져온다</li>
+    <li><a href="#images-responsive">pow.tickFormat</a> - 구분자를 출력할 포맷터를 가져온다</li>
+    <li><a href="#images-responsive">pow.exponent</a> - 제곱수의 지수를 get/set 한다</li>
+    <li><a href="#images-responsive">pow.copy</a> - 존재하는 스케일에서 신규 스케일을 생성한다</li>
+    <li><a href="#images-responsive">InnoChart.scale.log</a> - 로그 변환을 하는 정량 스케일을 생성한다</li>
+    <li><a href="#images-responsive">log</a> - 주어진 정의역 값에 들어맞는 치역 값을 가져온다</li>
+    <li><a href="#images-responsive">log.invert</a> - 주어진 치역 값에 들어맞는 정의역 값을 가져온다</li>
+    <li><a href="#images-responsive">log.domain</a> - 스케일의 정의역을 get/set한다</li>
+    <li><a href="#images-responsive">log.range</a> - 스케일의 치역을 get/set한다</li>
+    <li><a href="#images-responsive">log.rangeRound</a> - 스케일의 치역을 반올림해서 지정한다</li>
+    <li><a href="#images-responsive">log.interpolate</a> - 스케일의 인터폴레이터를 get/set 한다</li>
+    <li><a href="#images-responsive">log.clamp</a> - 치역 범위의 한정 여부를 결정한다</li>
+    <li><a href="#images-responsive">log.nice</a> - 10배수로 깔끔하게 스케일 정의역을 확장한다</li>
+    <li><a href="#images-responsive">log.ticks</a> - 정의역에서 대표할 값(구분자)들을 가져온다</li>
+    <li><a href="#images-responsive">log.tickFormat</a> - 구분자를 출력할 포맷터를 가져온다</li>
+    <li><a href="#images-responsive">log.copy</a> - 존재하는 스케일에서 신규 스케일을 생성한다</li>
+    <li><a href="#images-responsive">InnoChart.scale.quantize</a> - 분절된 치역의 선형 정량 스케일을 생성한다</li>
+    <li><a href="#images-responsive">quantize</a> - 주어진 정의역 값에 들어맞는 치역 값을 가져온다</li>
+    <li><a href="#images-responsive">quantize.domain</a> - 스케일의 정의역을 get/set한다</li>
+    <li><a href="#images-responsive">quantize.range</a> - 스케일의 치역(이산값)을 get/set 한다</li>
+    <li><a href="#images-responsive">quantize.copy</a> - 존재하는 스케일에서 신규 스케일을 생성한다</li>
+    <li><a href="#images-responsive">InnoChart.scale.threshold</a> - 분절된 치역으로 임계값 스케일을 생성한다</li>
+    <li><a href="#images-responsive">threshold</a> - 주어진 정의역 값에 들어맞는 치역 값을 가져온다</li>
+    <li><a href="#images-responsive">threshold.domain</a> - 스케일의 정의역을 get/set한다</li>
+    <li><a href="#images-responsive">threshold.range</a> - 스케일의 치역역을 get/set한다</li>
+    <li><a href="#images-responsive">threshold.copy</a> - 존재하는 스케일에서 신규 스케일을 생성한다</li>
+    <li><a href="#images-responsive">InnoChart.scale.quantile</a> - 사분위로 매핑된 정량 스케일을 생성한다</li>
+    <li><a href="#images-responsive">quantile</a> - 주어진 정의역 값에 들어맞는 치역 값을 가져온다</li>
+    <li><a href="#images-responsive">quantile.domain</a> - 스케일의 정의역(이산값)을 get/set한다</li>
+    <li><a href="#images-responsive">quantile.range</a> - 스케일의 치역(이산값)을 get/set 한다</li>
+    <li><a href="#images-responsive">quantile.quantiles</a> - 스케일의 사분위 임계값들을 가져온다</li>
+    <li><a href="#images-responsive">quantile.copy</a> - 존재하는 스케일에서 신규 스케일을 생성한다</li>
+    <li><a href="#images-responsive">InnoChart.scale.identity</a> - 항등 선형 스케일을 생성한다</li>
+    <li><a href="#images-responsive">identity</a> - 그 항등함수</li>
+    <li><a href="#images-responsive">identity.invert</a> - 항등함수와 같다.</li>
+    <li><a href="#images-responsive">identity.domain</a> - 스케일의 정의역과 치역을 get/set 한다</li>
+    <li><a href="#images-responsive">identity.range</a> - identity.domain과 같다</li>
+    <li><a href="#images-responsive">identity.ticks</a> - 정의역을 대표할 값(구분자)들을 가져온다</li>
+    <li><a href="#images-responsive">identity.tickFormat</a> - 구분자를 출력할 포맷터를 가져온다</li>
+    <li><a href="#images-responsive">identity.copy</a> - 존재하는 스케일에서 신규 스케일을 생성한다</li>
+
+  </ul>
+
+<h2 id="overview-doctype">Ordinal</h2>
+  <p>Ordinal에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.scale.category10</a> - 10개의 색상 카테고리로 순차 스케일 생성</li>    
+    <li> <a href="#" target="_blank">InnoChart.scale.category20</a> - 20개의 색상 카테고리로 순차 스케일 생성</li>    
+    <li> <a href="#" target="_blank">InnoChart.scale.category20b</a> - 20개의 색상 카테고리로 순차 스케일 생성</li>    
+    <li> <a href="#" target="_blank">InnoChart.scale.category20c</a> - 20개의 색상 카테고리로 순차 스케일 생성</li>    
+  </ul>
+
+<h1 id="overview" class="page-header">InnoChart.svg (SVG)</h1>  
+<h2 id="overview-doctype">Shapes</h2>
+  <p>Shapes에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.svg.line</a> - 라인 제네레이터를 새로 생성</li>    
+    <li> <a href="#" target="_blank">line</a> - 라인 차트 같은 구분된 선형 곡선(꺾은선. piecewise linear curve)을 생성한다</li>
+    <li> <a href="#" target="_blank">line.x</a> - x-좌표 접근자 get or set</li>    
+    <li> <a href="#" target="_blank">line.y</a> - y-좌표 접근자 get or set</li>
+    <li> <a href="#" target="_blank">InnoChart.svg.area</a> - 영역(area) 제네레이터를 새로 생성한다</li>    
+    <li> <a href="#" target="_blank">area</a> - 영역 차트 같은 꺽은선 영역(piecewise linear area)을 생성한다</li>
+    <li> <a href="#" target="_blank">area.x</a> - x 좌표 접근자 get or set</li>    
+    <li> <a href="#" target="_blank">area.x0</a> - x0 좌표 (기준선) 접근자 get or set</li>
+    <li> <a href="#" target="_blank">area.x1</a> - x1 좌표 (탑라인) 접근자 get or set</li>    
+    <li> <a href="#" target="_blank">area.y</a> - y 좌표 접근자 get or set</li>
+    <li> <a href="#" target="_blank">area.y0</a> - y0 좌표 (기준선) 접근자 get or set</li>    
+    <li> <a href="#" target="_blank">area.y1</a> - y1 좌표 (탑라인) 접근자 get or set</li>
+    <li> <a href="#" target="_blank"></a>InnoChart.svg.arc - create a new arc generator</li>    
+    <li> <a href="#" target="_blank">arc.innerRadius</a> - 도너츠 모양을 만들 때 안쪽의 반지름. get or set the inner radius accessor</li>
+    <li> <a href="#" target="_blank">arc.outerRadius</a> - 호의 크기를 결정함. get or set the outer radius accessor</li>    
+    <li> <a href="#" target="_blank">arc.startAngle</a> - 호의 시작 각도. get or set the start angle accessor</li>
+    <li> <a href="#" target="_blank">arc.endAngle</a> - 호의 끝점 각도. get or set the end angle accessor</li>    
+    <li> <a href="#" target="_blank">arc.centroid</a> - 호의 중심을 계산한다</li>
+  </ul>
+
+<h2 id="overview-doctype">Axes</h2>
+  <p>Axes에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.svg.axis</a> - 축(axis) 제네레이터를 새로 만든다</li>    
+    <li> <a href="#" target="_blank">axis</a> - 주어진 selection이나 transition을 위해서 축을 갱신하거나 생성한다</li>    
+    <li> <a href="#" target="_blank">axis.scale</a> - 축 스케일을 get or set</li>    
+    <li> <a href="#" target="_blank">axis.orient</a> - 축 위치 get or set</li>    
+    <li> <a href="#" target="_blank">axis.tickSubdivide</a> - 균등한 세부 구분자(옵션)</li>    
+    <li> <a href="#" target="_blank">axis.tickSize</a> - 주 구분자, 하위 구분자, 종료 구분자 크기 지정</li>    
+  </ul>
+
+<h2 id="overview-doctype">Controls</h2>
+<h2 id="overview-doctype">InnoChart.time (Time)</h2>
+<h2 id="overview-doctype">Time Formatting</h2>
+<h2 id="overview-doctype">Time Scales</h2>
+<h2 id="overview-doctype">Time Intervals</h2>
+<h2 id="overview-doctype">InnoChart.layout (Layouts)</h2>
+<h2 id="overview-doctype">Bundle</h2>
+<h2 id="overview-doctype">Chord</h2>
+<h2 id="overview-doctype">Cluster</h2>
+<h2 id="overview-doctype">Force</h2>
+<h2 id="overview-doctype">Hierarchy</h2>
+<h2 id="overview-doctype">Histogram</h2>
+<h2 id="overview-doctype">Pack</h2>
+<h2 id="overview-doctype">Partition</h2>
+<h2 id="overview-doctype">Pie</h2>
+<h2 id="overview-doctype">Stack</h2>
+<h2 id="overview-doctype">Tree</h2>
+<h2 id="overview-doctype">Treemap</h2>
+
+<h1 id="overview-doctype">InnoChart.geo (Geography)</h1>
+<h2 id="overview-doctype">Paths</h2>
+ <p>Paths에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.geo.path</a> - 지도 경로 제네레이터를 새로 생성한다</li>    
+    <li> <a href="#" target="_blank">path.projection</a> - 지도 투영법을 get or set</li>        
+  </ul>
+
+<h2 id="overview-doctype">Projections</h2>
+<p>Projections에 관련된 이미지</p>
+  <ul>
+    <li> <a href="#" target="_blank">InnoChart.geo.albers</a> - Albers 등적 원추 투영(Albers equal-area conic projection)을 새로 생성한다</li>    
+    <li> <a href="#" target="_blank">albers.origin</a> - 투영법의 origin get or set</li>
+    <li> <a href="#" target="_blank">albers.parallels</a> - 투영법의 두개의 기준 paralles를 get or set</li>    
+    <li> <a href="#" target="_blank">albers.scale</a> - 투영도 스케일 값을 get or set</li>
+    <li> <a href="#" target="_blank">InnoChart.geo.albersUsa</a> - </li>
+  </ul>
+
+<h1 id="overview-doctype">InnoChart.geo (InnoChart.geom (Geometry))</h1>
+<h2 id="overview-doctype">Voronoi</h2>
+<h2 id="overview-doctype">Quadtree</h2>
+<h2 id="overview-doctype">Polygon</h2>
+<h2 id="overview-doctype">Hull</h2>
+<h2 id="overview-doctype">Contour</h2>
+
+<h1 id="overview-doctype">InnoChart.behavior (Behaviors)</h1>
+<h2 id="overview-doctype">Drag</h2>
+<h2 id="overview-doctype">Zoom</h2>
+
+<!--
+<div>
+
+<div class="col-md-3" role="complementary">
+<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+<ul class="nav bs-docs-sidenav">              
+  <li>
+  <a href="#Selections">Selections</a>
+  <ul class="nav">
+    <li><a href="#overview-doctype">InnoChart.select</a></li>
+    <li><a href="#overview-doctype">InnoChart.selectAll</a></li>
+    <li><a href="#overview-doctype">selection.attr</a></li>
+    <li><a href="#overview-doctype">selection.classed</a></li>
+    <li><a href="#overview-doctype">selection.style</a></li>
+    <li><a href="#overview-doctype">selection.property</a></li>
+    <li><a href="#overview-doctype">selection.text</a></li>
+    <li><a href="#overview-doctype">selection.html</a></li>
+    <li><a href="#overview-doctype">selection.append</a></li>
+    <li><a href="#overview-doctype">selection.insert</a></li>
+    <li><a href="#overview-doctype">selection.remove</a></li>
+    <li><a href="#overview-doctype">selection.data</a></li>
+    <li><a href="#overview-doctype">selection.enter</a></li>
+    <li><a href="#overview-doctype">selection.exit</a></li>
+    <li><a href="#overview-doctype">selection.filter</a></li>
+    <li><a href="#overview-doctype">selection.datum</a></li>
+    <li><a href="#overview-doctype">selection.sort</a></li>
+    <li><a href="#overview-doctype">selection.order</a></li>
+    <li><a href="#overview-doctype">selection.on</a></li>
+    <li><a href="#overview-doctype">selection.transition</a></li>
+    <li><a href="#overview-doctype">selection.each</a></li>
+    <li><a href="#overview-doctype">selection.call</a></li>
+    <li><a href="#overview-doctype">selection.empty</a></li>
+    <li><a href="#overview-doctype">selection.node</a></li>
+    <li><a href="#overview-doctype">selection.select</a></li>
+    <li><a href="#overview-doctype">selection.selectAll</a></li>
+    <li><a href="#overview-doctype">InnoChart.event</a></li>
+    <li><a href="#overview-doctype">InnoChart.select</a></li>
+    <li><a href="#overview-doctype">InnoChart.mouse</a></li>
+    <li><a href="#overview-doctype">InnoChart.touches</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#grid">Transitions</a>
+  <ul class="nav">
+    <li><a href="#grid-intro">InnoChart.transition</a></li>    
+    <li><a href="#grid-intro">transition.delay</a></li>
+    <li><a href="#grid-intro">transition.duration</a></li>
+    <li><a href="#grid-intro">transition.ease</a></li>
+    <li><a href="#grid-intro">transition.attr</a></li>
+    <li><a href="#grid-intro">transition.attrTween</a></li>    
+    <li><a href="#grid-intro">transition.style</a></li>
+    <li><a href="#grid-intro">transition.styleTween</a></li>
+    <li><a href="#grid-intro">transition.text</a></li>
+    <li><a href="#grid-intro">transition.tween</a></li>
+    <li><a href="#grid-intro">transition.select</a></li>    
+    <li><a href="#grid-intro">transition.selectAll</a></li>
+    <li><a href="#grid-intro">transition.filter</a></li>
+    <li><a href="#grid-intro">transition.transition</a></li>
+    <li><a href="#grid-intro">transition.remove</a></li>
+    <li><a href="#grid-intro">transition.each</a></li>    
+    <li><a href="#grid-intro">transition.call</a></li>
+    <li><a href="#grid-intro">InnoChart.tween</a></li>
+    <li><a href="#grid-intro">InnoChart.ease</a></li>
+    <li><a href="#grid-intro">ease</a></li>
+    <li><a href="#grid-intro">InnoChart.timer</a></li>    
+    <li><a href="#grid-intro">InnoChart.timer.flush</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolate</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateNumber</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateRound</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateString</a></li>    
+    <li><a href="#grid-intro">InnoChart.interpolateRgb</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateHsl</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateLab</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateHcl</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateArray</a></li>    
+    <li><a href="#grid-intro">InnoChart.interpolateObject</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolateTransform</a></li>
+    <li><a href="#grid-intro">InnoChart.interpolators</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#type">Working with Arrays</a>
+  <ul class="nav">
+    <li><a href="#type-headings">InnoChart.ascending</a></li>
+    <li><a href="#type-headings">InnoChart.descending </a></li>
+    <li><a href="#type-headings">InnoChart.min</a></li>
+    <li><a href="#type-headings">InnoChart.max</a></li>
+    <li><a href="#type-headings">InnoChart.extent</a></li>
+    <li><a href="#type-headings">InnoChart.sum</a></li>
+    <li><a href="#type-headings">InnoChart.mean</a></li>
+    <li><a href="#type-headings">InnoChart.median</a></li>
+    <li><a href="#type-headings">InnoChart.quantile</a></li>
+    <li><a href="#type-headings">InnoChart.bisect</a></li>
+    <li><a href="#type-headings">InnoChart.bisectRight</a></li>
+    <li><a href="#type-headings">InnoChart.bisectLeft</a></li>
+    <li><a href="#type-headings">InnoChart.bisector</a></li>
+    <li><a href="#type-headings">InnoChart.shuffle</a></li>
+    <li><a href="#type-headings">InnoChart.permute</a></li>
+    <li><a href="#type-headings">InnoChart.zip</a></li>
+    <li><a href="#type-headings">InnoChart.transpose</a></li>
+    <li><a href="#type-headings">InnoChart.keys</a></li>
+    <li><a href="#type-headings">InnoChart.values</a></li>
+    <li><a href="#type-headings">InnoChart.entries</a></li>
+    <li><a href="#type-headings">InnoChart.split</a></li>
+    <li><a href="#type-headings">InnoChart.merge</a></li>
+    <li><a href="#type-headings">InnoChart.range</a></li>
+    <li><a href="#type-headings">InnoChart.nest</a></li>
+    <li><a href="#type-headings">nest.key</a></li>
+    <li><a href="#type-headings">nest.sortKeys</a></li>
+    <li><a href="#type-headings">nest.sortValues</a></li>
+    <li><a href="#type-headings">nest.rollup</a></li>
+    <li><a href="#type-headings">nest.map</a></li>
+    <li><a href="#type-headings">nest.entries </a></li>
+  </ul>
+</li>
+<li>
+  <a href="#code">Math</a>
+  <ul class="nav">
+    <li><a href="#code-inline">InnoChart.random.normal</a></li>
+    <li><a href="#code-user-input">InnoChart.transform</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#tables">Loading External Resources</a>
+  <ul class="nav">
+    <li><a href="#tables-example">InnoChart.xhr</a></li>
+    <li><a href="#tables-striped">InnoChart.text</a></li>
+    <li><a href="#tables-bordered">InnoChart.json</a></li>
+    <li><a href="#tables-hover-rows">InnoChart.html</a></li>
+    <li><a href="#tables-condensed">InnoChart.xml</a></li>
+    <li><a href="#tables-contextual-classes">InnoChart.csv</a></li>
+    <li><a href="#tables-responsive">InnoChart.tsv</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#forms">String Formatting</a>
+  <ul class="nav">
+    <li><a href="#buttons-tags"></a></li>
+  </ul>
+</li>
+<li>
+  <a href="#buttons">CSV Formatting (InnoChart.csv)</a>
+  <ul class="nav">
+    <li><a href="#buttons-tags"></a></li>    
+  </ul>
+</li>
+<li>
+  <a href="#images">Colors</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>
+  </ul>
+</li>
+<li>
+  <a href="#images">Namespaces</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>
+  </ul>
+</li>
+<li>
+  <a href="#images">Internals</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>
+  </ul>
+</li>
+<li>
+  <a href="#images">Quantitative</a>
+  <ul class="nav">
+    <li><a href="#images-responsive">InnoChart.scale.linear</a></li>
+    <li><a href="#images-responsive">linear</a></li>
+    <li><a href="#images-responsive">linear.invert</a></li>
+    <li><a href="#images-responsive">linear.domain</a></li>
+    <li><a href="#images-responsive">linear.range</a></li>
+    <li><a href="#images-responsive">linear.rangeRound</a></li>
+    <li><a href="#images-responsive">linear.interpolate</a></li>
+    <li><a href="#images-responsive">linear.clamp</a></li>
+    <li><a href="#images-responsive">linear.nice</a></li>
+    <li><a href="#images-responsive">linear.ticks</a></li>
+    <li><a href="#images-responsive">linear.tickFormat</a></li>
+    <li><a href="#images-responsive">linear.copy</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.sqrt</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.pow</a></li>
+    <li><a href="#images-responsive">pow</a></li>
+    <li><a href="#images-responsive">pow.invert</a></li>
+    <li><a href="#images-responsive">pow.domain</a></li>
+    <li><a href="#images-responsive">pow.range</a></li>
+    <li><a href="#images-responsive">pow.rangeRound</a></li>
+    <li><a href="#images-responsive">pow.interpolate</a></li>
+    <li><a href="#images-responsive">pow.clamp</a></li>
+    <li><a href="#images-responsive">pow.nice</a></li>
+    <li><a href="#images-responsive">pow.ticks</a></li>
+    <li><a href="#images-responsive">pow.tickFormat</a></li>
+    <li><a href="#images-responsive">pow.exponent</a></li>
+    <li><a href="#images-responsive">pow.copy</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.log</a></li>
+    <li><a href="#images-responsive">log</a></li>
+    <li><a href="#images-responsive">log.invert</a></li>
+    <li><a href="#images-responsive">log.domain</a></li>
+    <li><a href="#images-responsive">log.range</a></li>
+    <li><a href="#images-responsive">log.rangeRound</a></li>
+    <li><a href="#images-responsive">log.interpolate</a></li>
+    <li><a href="#images-responsive">log.clamp</a></li>
+    <li><a href="#images-responsive">log.nice</a></li>
+    <li><a href="#images-responsive">log.ticks</a></li>
+    <li><a href="#images-responsive">log.tickFormat</a></li>
+    <li><a href="#images-responsive">log.copy</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.quantize</a></li>
+    <li><a href="#images-responsive">quantize</a></li>
+    <li><a href="#images-responsive">quantize.domain</a></li>
+    <li><a href="#images-responsive">quantize.range</a></li>
+    <li><a href="#images-responsive">quantize.copy</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.threshold</a></li>
+    <li><a href="#images-responsive">threshold.domain</a></li>
+    <li><a href="#images-responsive">threshold.range</a></li>
+    <li><a href="#images-responsive">threshold.copy</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.quantile</a></li>
+    <li><a href="#images-responsive">quantile</a></li>
+    <li><a href="#images-responsive">quantile.domain</a></li>
+    <li><a href="#images-responsive">quantile.range</a></li>
+    <li><a href="#images-responsive">quantile.quantiles</a></li>
+    <li><a href="#images-responsive">quantile.copy</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.identity</a></li>
+    <li><a href="#images-responsive">identity</a></li>
+    <li><a href="#images-responsive">identity.invert</a></li>
+    <li><a href="#images-responsive">identity.domain</a></li>
+    <li><a href="#images-responsive">identity.range</a></li>
+    <li><a href="#images-responsive">identity.ticks</a></li>
+    <li><a href="#images-responsive">identity.tickFormat</a></li>
+    <li><a href="#images-responsive">identity.copy</a></li>
+  </ul>
+</li> 
+<li>
+  <a href="#images">Ordinal</a>
+  <ul class="nav">
+    <li><a href="#images-responsive">InnoChart.scale.category10</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.category20</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.category20b</a></li>
+    <li><a href="#images-responsive">InnoChart.scale.category20c</a></li>
+  </ul>  
+</li>  
+<li>
+  <a href="#">Shapes</a>
+  <ul class="nav">
+    <li><a href="#images-responsive">InnoChart.svg.line</a></li>
+    <li><a href="#images-responsive">line</a></li>
+    <li><a href="#images-responsive">line.x</a></li>
+    <li><a href="#images-responsive">line.y</a></li>
+    <li><a href="#images-responsive">InnoChart.svg.area</a></li>
+    <li><a href="#images-responsive">area</a></li>
+    <li><a href="#images-responsive">area.x</a></li>
+    <li><a href="#images-responsive">area.x0</a></li>
+    <li><a href="#images-responsive">area.x1</a></li>
+    <li><a href="#images-responsive">area.y</a></li>
+    <li><a href="#images-responsive">area.y0</a></li>
+    <li><a href="#images-responsive">area.y1</a></li>
+    <li><a href="#images-responsive">InnoChart.svg.arc</a></li>
+    <li><a href="#images-responsive">arc.innerRadius</a></li>
+    <li><a href="#images-responsive">arc.outerRadius</a></li>
+    <li><a href="#images-responsive">arc.startAngle</a></li>
+    <li><a href="#images-responsive">arc.endAngle</a></li>
+    <li><a href="#images-responsive">arc.centroid</a></li>    
+  </ul>
+</li>
+<li>
+  <a href="#">Axes</a>
+  <ul class="nav">
+    <li><a href="#images-responsive">InnoChart.svg.axis</a></li>
+    <li><a href="#images-responsive">axis</a></li>
+    <li><a href="#images-responsive">axis.scale</a></li>
+    <li><a href="#images-responsive">axis.orient</a></li>
+    <li><a href="#images-responsive">InnoChart.svg.area</a></li>
+    <li><a href="#images-responsive">axis.tickSubdivide</a></li>
+    <li><a href="#images-responsive">axis.tickSize </a></li>    
+  </ul>
+</li>  
+<li>
+  <a href="#">Controls</a>
+  <ul class="nav">       
+  </ul>
+</li>       
+<li>
+  <a href="#">InnoChart.time (Time)</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Time Formatting</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Time Scales</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Time Intervals</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">InnoChart.layout (Layouts)</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Bundle</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Cluster</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Force</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Hierarchy</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Histogram</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Pack</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Partition</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Pie</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Stack</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Tree</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Treemap</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Paths</a>
+  <ul class="nav">       
+  </ul>
+</li>
+<li>
+  <a href="#">Partition</a>
+  <ul class="nav">
+    <li><a href="#images-responsive">InnoChart.geo.albers</a></li>  
+    <li><a href="#images-responsive">albers.origin</a></li>  
+    <li><a href="#images-responsive">albers.parallels</a></li>  
+    <li><a href="#images-responsive">albers.scale</a></li>  
+    <li><a href="#images-responsive">InnoChart.geo.albersUsa</a></li>  
+  </ul>
+</li>
+<li>
+  <a href="#">Voronoi</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>  
+  </ul>
+</li>
+<li>
+  <a href="#">Quadtree</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>  
+  </ul>
+</li>
+<li>
+  <a href="#">Polygon</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>  
+  </ul>
+</li>
+<li>
+  <a href="#">Hull</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>  
+  </ul>
+</li>
+<li>
+  <a href="#">Contour</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>  
+  </ul>
+</li>
+<li>
+  <a href="#">Drag</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>  
+  </ul>
+</li>
+<li>
+  <a href="#">Zoom</a>
+  <ul class="nav">
+    <li><a href="#images-responsive"></a></li>  
+  </ul>
+</li>
+            </ul>
+            <a class="back-to-top" href="#top">
+              Back to top
+            </a>
+            
+            <a href="#" class="bs-docs-theme-toggle" role="button">
+              Preview theme
+            </a>
+            
+          </nav>
+        </div>
+        
+      </div>
+    </div>
+
+    
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="bs-docs-social">
+  <ul class="bs-docs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user=twbs&amp;repo=bootstrap&amp;type=watch&amp;count=true" width="100" height="20" title="Star on GitHub"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user=twbs&amp;repo=bootstrap&amp;type=fork&amp;count=true" width="102" height="20" title="Fork on GitHub"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a href="https://twitter.com/getbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @getbootstrap</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://getbootstrap.com/" data-count="horizontal" data-via="getbootstrap" data-related="mdo:Creator of Bootstrap">Tweet</a>
+    </li>
+  </ul>
+</div>
+
+
+    <p>Designed and built with all the love in the world by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>Maintained by the <a href="https://github.com/orgs/twbs/people">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+    <p>Code licensed under <a rel="license" href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under <a rel="license" href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+    <ul class="bs-docs-footer-links text-muted">
+      <li>Currently v3.3.5</li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
+      <li>&middot;</li>
+      <li><a href="../getting-started/#examples">Examples</a></li>
+      <li>&middot;</li>
+      <li><a href="../2.3.2/">v2.3.2 docs</a></li>
+      <li>&middot;</li>
+      <li><a href="../about/">About</a></li>
+      <li>&middot;</li>
+      <li><a href="http://expo.getbootstrap.com">Expo</a></li>
+      <li>&middot;</li>
+      <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/twbs/bootstrap/issues">Issues</a></li>
+      <li>&middot;</li>
+      <li><a href="https://github.com/twbs/bootstrap/releases">Releases</a></li>
+    </ul>
+  </div>
+  
+</footer>
+-->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+  <script src="../dist/js/bootstrap.js"></script>
+
+
+
+  
+  <script src="../assets/js/vendor/holder.min.js"></script>
+  
+  <script src="../assets/js/vendor/ZeroClipboard.min.js"></script>
+  
+  <script src="../assets/js/vendor/anchor.js"></script>
+  
+  <script src="../assets/js/src/application.js"></script>
+  
+
+
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+<script>
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+    js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+</script>
+
+<!-- Analytics
+================================================== -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+  </body>
+</html>
