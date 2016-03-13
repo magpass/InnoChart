@@ -10,4 +10,4 @@
 
 
 ##Note
-You can compile the official docs yourself with Jekyll.
+© 2016 INNONEXT. 2014 COPYRIGHT BY INNONEXT, ALL RIGHTS RESERVED.
